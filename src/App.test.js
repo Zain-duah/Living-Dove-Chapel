@@ -9,6 +9,11 @@ test('renders the church landing page content', () => {
   ).toBeInTheDocument();
   expect(screen.getByText(/impacting lives through christ-centered worship/i)).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: /there is a place for you here/i })).toBeInTheDocument();
+  expect(screen.getAllByText('8:00 AM–11:30 AM')).toHaveLength(2);
+  expect(screen.getByRole('link', { name: /watch the service/i })).toHaveAttribute(
+    'href',
+    'https://www.facebook.com/100069340956142/videos/living-dove-chapel/1543925197231340/'
+  );
 });
 
 test('mobile navigation can be opened and closed', () => {

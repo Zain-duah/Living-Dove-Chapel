@@ -43,9 +43,14 @@ const churchLife = [
 ];
 
 const gatherings = [
-  { title: 'Sunday worship', text: 'Gather with us to worship God, hear the Word, and find your church family.' },
-  { title: 'Prayer & Bible study', text: 'Make room for prayer, Scripture, and encouragement in the middle of the week.' },
-  { title: 'Youth & community', text: 'Get connected with opportunities to grow, serve, and build meaningful relationships.' },
+  { day: 'Sunday', time: '8:00 AM–11:30 AM', title: 'Sunday Worship' },
+  { day: 'Wednesday–Friday', time: '7:00 PM–8:30 PM', title: 'Midweek Service' },
+  { day: 'Tuesday', time: '7:00 PM–8:00 PM', title: "Men’s Fellowship" },
+];
+
+const givingOptions = [
+  { provider: 'MTN Mobile Money', number: '+233 257 121 701', phone: '+233257121701' },
+  { provider: 'Telecel Cash', number: '+233 50 797 1000', phone: '+233507971000' },
 ];
 
 function App() {
@@ -86,6 +91,7 @@ function App() {
         <MissionsSection />
         <MinistrySection />
         <SermonSection />
+        <WatchLiveSection />
         <EventsSection />
         <GiveSection />
       </main>
@@ -111,6 +117,7 @@ function NavBar() {
         <a href="#about" onClick={closeMenu}>About</a>
         <a href="#ministries" onClick={closeMenu}>Ministries</a>
         <a href="#events" onClick={closeMenu}>Gatherings</a>
+        <a href="#live" onClick={closeMenu}>Watch live</a>
         <a href="#contact" onClick={closeMenu}>Contact</a>
       </div>
 
@@ -146,16 +153,16 @@ function HeroSection() {
 
         <div className="hero-meta">
           <div>
-            <span>Worship</span>
-            <strong>Encounter God</strong>
+            <span>Sunday Worship</span>
+            <strong>8:00 AM–11:30 AM</strong>
           </div>
           <div>
-            <span>Grow</span>
-            <strong>Build your faith</strong>
+            <span>Midweek Service</span>
+            <strong>Wed–Fri, 7:00–8:30 PM</strong>
           </div>
           <div>
-            <span>Serve</span>
-            <strong>Love our community</strong>
+            <span>Find us</span>
+            <strong>Community 2, Tema</strong>
           </div>
         </div>
       </div>
@@ -296,13 +303,34 @@ function EventsSection() {
       <div className="events-grid">
         {gatherings.map((gathering) => (
           <article className="event-card reveal" key={gathering.title}>
-            <div className="event-date" aria-hidden="true">✦</div>
+            <div className="event-date">
+              <span>{gathering.day}</span>
+              <strong>{gathering.time}</strong>
+            </div>
             <h3>{gathering.title}</h3>
-            <p>{gathering.text}</p>
-            <a href="tel:+233257121701">Ask about visiting</a>
+            <a href="tel:+233257121701">Call about visiting</a>
           </article>
         ))}
       </div>
+    </section>
+  );
+}
+
+function WatchLiveSection() {
+  return (
+    <section id="live" className="live-section reveal" aria-labelledby="live-title">
+      <div>
+        <p className="eyebrow">Worship with us online</p>
+        <h2 id="live-title">Join a Living Dove Chapel service on Facebook</h2>
+      </div>
+      <a
+        className="secondary-btn"
+        href="https://www.facebook.com/100069340956142/videos/living-dove-chapel/1543925197231340/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Watch the service
+      </a>
     </section>
   );
 }
@@ -311,11 +339,22 @@ function GiveSection() {
   return (
     <section className="give-section reveal">
       <div className="give-content">
-        <div>
-          <p className="eyebrow">Be part of the mission</p>
-          <h2>Let’s share Christ’s love in our community</h2>
+        <div className="give-copy">
+          <p className="eyebrow">Support the ministry</p>
+          <h2>Partner with the work of Living Dove Chapel</h2>
+          <p className="giving-intro">Thank you for helping us share the gospel and serve our community.</p>
+          <div className="giving-options">
+            {givingOptions.map((option) => (
+              <div className="giving-option" key={option.provider}>
+                <span>{option.provider}</span>
+                <a href={`tel:${option.phone}`}>{option.number}</a>
+              </div>
+            ))}
+          </div>
+          <p className="bank-details">
+            For bank transfer details, <a href="mailto:hello@livingdovechapel.org?subject=Bank%20transfer%20details">contact the church</a>.
+          </p>
         </div>
-        <a href="mailto:hello@livingdovechapel.org?subject=Connecting%20with%20Living%20Dove%20Chapel" className="primary-btn">Get in touch</a>
       </div>
     </section>
   );
@@ -337,6 +376,7 @@ function Footer() {
           <a href="#about">About</a>
           <a href="#ministries">Ministries</a>
           <a href="#events">Events</a>
+          <a href="#live">Watch live</a>
         </div>
 
         <div className="footer-links">
@@ -344,6 +384,13 @@ function Footer() {
           <a href="mailto:hello@livingdovechapel.org">hello@livingdovechapel.org</a>
           <a href="tel:+233257121701">+233 257 121 701</a>
           <span>Community 2, Tema, Ghana</span>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Living+Dove+Chapel%2C+Tema%2C+Ghana"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Get directions
+          </a>
         </div>
 
         <div className="footer-social">

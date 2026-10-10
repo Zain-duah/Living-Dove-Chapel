@@ -536,7 +536,7 @@ a {
   font-size: 1.35rem;
   min-width: 48px;
   min-height: 48px;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -550,6 +550,11 @@ a {
   letter-spacing: 0.12em;
   font-size: 0.7rem;
   color: var(--secondary-soft);
+}
+
+.event-date strong {
+  margin-top: 4px;
+  font-size: 0.9rem;
 }
 
 .event-card h3 {
@@ -586,10 +591,80 @@ a {
   color: var(--white);
 }
 
+.give-copy {
+  width: 100%;
+}
+
 .give-content h2 {
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.1;
   letter-spacing: -0.04em;
+}
+
+.giving-intro {
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+}
+
+.giving-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.giving-option {
+  padding: 16px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.giving-option span,
+.giving-option a {
+  display: block;
+}
+
+.giving-option span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.88rem;
+  margin-bottom: 7px;
+}
+
+.giving-option a,
+.bank-details a {
+  color: var(--secondary-soft);
+  font-weight: 700;
+}
+
+.bank-details {
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.live-section {
+  max-width: 1144px;
+  margin: 110px auto 0;
+  padding: 36px;
+  border-radius: var(--radius-lg);
+  color: var(--white);
+  background: linear-gradient(120deg, var(--primary-dark), var(--primary-color));
+  box-shadow: var(--card-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.live-section h2 {
+  max-width: 680px;
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  line-height: 1.15;
+}
+
+.live-section .secondary-btn {
+  flex-shrink: 0;
 }
 
 .site-footer {
@@ -749,9 +824,15 @@ a {
   }
 
   .give-content,
-  .footer-bottom {
+  .footer-bottom,
+  .live-section {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .live-section {
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 
@@ -782,6 +863,10 @@ a {
   }
 
   .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .giving-options {
     grid-template-columns: 1fr;
   }
 
