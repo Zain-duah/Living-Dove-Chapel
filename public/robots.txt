@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://living-dove-chapel.vercel.app/sitemap.xml
