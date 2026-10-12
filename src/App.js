@@ -15,14 +15,6 @@ import gallerySix from './images/img06.jpg';
 import gallerySeven from './images/img07.jpg';
 import galleryEight from './images/img08.jpg';
 import galleryNine from './images/img09.jpg';
-import alex from './images/alex.jpg';
-import bene from './images/bene.jpg';
-import job1 from './images/job1.jpg';
-import joshua from './images/joshua.jpg';
-import linda from './images/linda.jpg';
-import roda from './images/roda.jpg';
-import serwaa from './images/serwaa1.jpg';
-import turkson from './images/turkson.jpg';
 
 const galleryPhotoContext =
   typeof require.context === 'function'
@@ -64,7 +56,7 @@ const ministries = [
 ];
 
 const featuredChurchLife = [
-  { title: 'Worship together', image: galleryOne, alt: 'A church member leading worship at Living Dove Chapel' },
+  { title: 'Grow in Christ', image: galleryOne, alt: 'A church member leading worship at Living Dove Chapel' },
   { title: 'Grow in faith', image: galleryTwo, alt: 'A church member sharing a moment at a church gathering' },
   { title: 'Love in action', image: galleryThree, alt: 'A member praying during a church service' },
   { title: 'Prayer & praise', image: galleryFour, alt: 'Church members gathered in prayer and praise' },
@@ -115,20 +107,20 @@ const createProfiles = (role, namedProfiles = [], minimumCount = 8) =>
       name: suppliedProfile?.name || `${role} ${number} — add name`,
       role: suppliedProfile?.role || role,
       initials: suppliedProfile?.initials || `${role === 'Pastor' ? 'P' : 'M'}${number}`,
-      image: suppliedProfile?.image ?? suppliedProfile?.profileImg ?? null,
+      image: suppliedProfile?.image || null,
     };
   });
 
 const pastors = createProfiles('Pastor', [
-  { name: 'Prophet Job Aidoo', role: 'General Overseer', initials: 'JA', image: job1 },
-  { name: 'Apostle Jeffery Yankey', role: 'Apostle', initials: 'JY', image: alex },
-  { name: 'Pastor Wilfred Nii Armah', role: 'Pastor', initials: 'WA', image: bene },
-  { name: 'Pastor Nii Odai Mensah', role: 'Pastor', initials: 'NM', image: joshua },
-  { name: 'Pastor George Turkson', role: 'Pastor', initials: 'GT', image: turkson },
-  { name: 'Pastor Annorhomah Quarm', role: 'Pastor', initials: 'AQ', image: linda },
-  { name: 'Elder Maccandles Mark', role: 'Elder', initials: 'MM', image: roda },
+  { name: 'Prophet Job Aidoo', role: 'General Overseer', initials: 'JA',profileImg: './images/job1.jpg' },
+  { name: 'Apostle Jeffery Yankey', role: 'Apostle', initials: 'JY' },
+  { name: 'Pastor Wilfred Nii Armah', role: 'Pastor', initials: 'WA' },
+  { name: 'Pastor Nii Odai Mensah', role: 'Pastor', initials: 'NM' },
+  { name: 'Pastor George Turkson', role: 'Pastor', initials: 'GT' },
+  { name: 'Pastor Annorhomah Quarm', role: 'Pastor', initials: 'AQ' },
+  { name: 'Elder Maccandles  Mark Bekoe Jr', role: 'Elder', initials: 'MM' },
   { name: 'Pastor Maxwell Kwofi Ampiah', role: 'Pastor', initials: 'MA' },
-  { name: 'Lady Pastor Serwaa Aidoo', role: 'Lady Pastor', initials: 'SA', image: serwaa },
+  { name: 'Lady Pastor Serwaa Aidoo', role: 'Lady Pastor', initials: 'SA' },
   { name: 'Lady Pastor Patience Nii Armah', role: 'Lady Pastor', initials: 'PA' },
   { name: 'Lady Pastor Dorcas', role: 'Lady Pastor', initials: 'PD' },
 ], 11);
@@ -618,7 +610,7 @@ function BranchesSection() {
             {branch.isMain && <span className="branch-tag">Main branch</span>}
             <h3>{branch.name}</h3>
             <p>{branch.location}, Ghana</p>
-            <a href={directionsUrl(branch)} target="_blank" rel="noreferrer" aria-label="Get directions">
+            <a href={directionsUrl(branch)} target="_blank" rel="noreferrer">
               Get directions <span aria-hidden="true">↗</span>
             </a>
           </article>
@@ -731,7 +723,7 @@ function Footer() {
             target="_blank"
             rel="noreferrer"
           >
-            Find us on the map
+            Get directions
           </a>
         </div>
 
