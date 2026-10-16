@@ -228,6 +228,12 @@ a {
   color: var(--primary-dark);
   box-shadow: 0 16px 30px rgba(245, 185, 66, 0.3);
 }
+.primary-btn:hover{
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  box-shadow: none;
+  border: 1px solid var(--secondary-color);
+}
 
 .secondary-btn {
   border: 1px solid rgba(255, 255, 255, 0.35);
@@ -279,6 +285,8 @@ a {
 }
 .hero-meta div:hover{
   backdrop-filter: blur(10px);
+  border: 1px solid var(--secondary-color);
+  
 }
 
 
@@ -327,9 +335,10 @@ a {
   color: var(--primary-dark);
   backdrop-filter: blur(10px);
   padding: 16px 18px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 3px solid  var(--primary-dark);
   border-radius: 16px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.16);
+  
 }
 
 .floating-card strong,
@@ -1039,6 +1048,7 @@ a {
   padding: 110px 28px 0;
 }
 
+
 .profiles-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1179,6 +1189,13 @@ a {
   border-radius: 22px;
   background: var(--white);
   box-shadow: var(--card-shadow);
+  transition: .15s ease-out;
+}
+.branch-card:hover{
+  background: var(--secondary-soft);
+  transform: translateY(-5px);
+  border: 1px solid #fff;
+  
 }
 
 .branch-card-main {
