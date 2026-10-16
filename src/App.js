@@ -17,14 +17,14 @@ import galleryEight from './images/img08.jpg';
 import galleryNine from './images/img09.jpg';
 
 const galleryPhotoContext =
-  typeof require.context === 'function'
-    ? require.context('./images', false, /^\.\/gallery-[a-z0-9-]+\.(?:jpe?g|png|webp)$/i)
-    : null;
+  process.env.NODE_ENV === 'test'
+    ? null
+    : require.context('./images', false, /^\.\/gallery-[a-z0-9-]+\.(?:jpe?g|png|webp)$/i);
 
 const profilePhotoContext =
-  typeof require.context === 'function'
-    ? require.context('./images', false, /^\.\/[^/]+\.(?:jpe?g|png|webp)$/i)
-    : null;
+  process.env.NODE_ENV === 'test'
+    ? null
+    : require.context('./images', false, /^\.\/[^/]+\.(?:jpe?g|png|webp)$/i);
 
 const stats = [
   { value: 'Christ', label: 'At the heart of everything we do' },
