@@ -124,16 +124,16 @@ const createProfiles = (role, namedProfiles = [], minimumCount = 8) =>
 
 const pastors = createProfiles('Pastor', [
   { name: 'Prophet Job Aidoo', role: 'General Overseer', initials: 'JA', image: 'job1.jpg' },
-  { name: 'Apostle Jeffery Yankey', role: 'Apostle', initials: 'JY', image: 'instrumentalist/alex.jpg' },
-  { name: 'Pastor Wilfred Nii Armah', role: 'Pastor', initials: 'WA', image: 'choir/bene.jpg' },
-  { name: 'Pastor Nii Odai Mensah', role: 'Pastor', initials: 'NM', image: 'instrumentalist/joshua.jpg' },
+  { name: 'Apostle Edmund Yankey', role: 'Apostle', initials: 'JY', image: 'pastors/apostlej.jpg' },
+  { name: 'Pastor Wilfred Nii Armah', role: 'Pastor', initials: 'WA', image: 'pastors/wilfred.jpg' },
+  { name: 'Pastor Nii Odai Mensah', role: 'Pastor', initials: 'NM', image: 'pastors/nii.jpg' },
   { name: 'Pastor George Turkson', role: 'Pastor', initials: 'GT', image: 'pastors/turkson.jpg' },
-  { name: 'Pastor Annorhomah Quarm', role: 'Pastor', initials: 'AQ', image: 'choir/linda.jpg' },
-  { name: 'Elder Maccandles Mark', role: 'Elder', initials: 'MM', image: 'choir/roda.jpg' },
-  { name: 'Pastor Maxwell Kwofi Ampiah', role: 'Pastor', initials: 'MA' },
-  { name: 'Lady Pastor Serwaa Aidoo', role: 'Lady Pastor', initials: 'SA', image: 'serwaa1.jpg' },
+  { name: 'Pastor Annorhomah Quarm', role: 'Pastor', initials: 'AQ', image: 'pastors/kuarm.jpg' },
+  { name: 'Elder Maccandles Bekoe Jr', role: 'Elder', initials: 'MM', image: 'pastors/mark.jpg' },
+  { name: 'Pastor Maxwell Kwofi Ampiah', role: 'Pastor', initials: 'MA', image: 'pastors/max.jpg' },
+  { name: 'Lady Pastor Serwaa Aidoo', role: 'Lady Pastor', initials: 'SA', image: 'pastors/serwaa.jpg' },
   { name: 'Lady Pastor Patience Nii Armah', role: 'Lady Pastor', initials: 'PA' },
-  { name: 'Lady Pastor Dorcas', role: 'Lady Pastor', initials: 'PD' },
+  { name: 'Lady Pastor Dorcas', role: 'Lady Pastor', initials: 'PD', image: 'pastors/pastor_dorcas.jpg' },
 ], 11);
 
 const departmentProfiles = ministries.map((department) => ({
@@ -510,7 +510,7 @@ function LeadersSection() {
         <p className="eyebrow dark">People who serve</p>
         <h2 id="leaders-title">Our pastors</h2>
         <p className="section-intro">
-          Meet the pastors serving Living Dove Chapel. Names and photos marked for updating are temporary placeholders.
+          Meet the pastors serving Living Dove Chapel.
         </p>
       </div>
 

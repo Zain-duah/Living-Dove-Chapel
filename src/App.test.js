@@ -70,12 +70,12 @@ test('renders the named pastors in the requested order and eight profiles for ev
 
   const pastorNames = [
     'Prophet Job Aidoo',
-    'Apostle Jeffery Yankey',
+    'Apostle Edmund Yankey',
     'Pastor Wilfred Nii Armah',
     'Pastor Nii Odai Mensah',
     'Pastor George Turkson',
     'Pastor Annorhomah Quarm',
-    'Elder Maccandles Mark',
+    'Elder Maccandles Bekoe Jr',
     'Pastor Maxwell Kwofi Ampiah',
     'Lady Pastor Serwaa Aidoo',
     'Lady Pastor Patience Nii Armah',
