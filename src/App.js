@@ -4,6 +4,7 @@ import './App.css';
 import logo from './logo.jpg';
 import icon from './icons/menu.svg';
 import closeIcon from './icons/close.svg';
+import facebookIcon from './icons/facebook.svg';
 import whatsappIcon from './icons/whatsapp.svg';
 import heroImage from './images/wrapper.jpg';
 import galleryOne from './images/img01.jpg';
@@ -24,7 +25,12 @@ const galleryPhotoContext =
 const profilePhotoContext =
   process.env.NODE_ENV === 'test'
     ? null
-    : require.context('./images', false, /^\.\/[^/]+\.(?:jpe?g|png|webp)$/i);
+    : require.context('./images', true, /^\.\/(?:[^/]+\/)?[^/]+\.(?:jpe?g|png|webp)$/i);
+
+const getProfilePhoto = (filePath) => {
+  const contextPath = `./${filePath}`;
+  return profilePhotoContext?.keys().includes(contextPath) ? profilePhotoContext(contextPath) : null;
+};
 
 const stats = [
   { value: 'Christ', label: 'At the heart of everything we do' },
@@ -112,20 +118,18 @@ const createProfiles = (role, namedProfiles = [], minimumCount = 8) =>
       name: suppliedProfile?.name || `${role} ${number} — add name`,
       role: suppliedProfile?.role || role,
       initials: suppliedProfile?.initials || `${role === 'Pastor' ? 'P' : 'M'}${number}`,
-      image: suppliedProfile?.image && profilePhotoContext
-        ? profilePhotoContext(`./${suppliedProfile.image}`)
-        : null,
+      image: suppliedProfile?.image ? getProfilePhoto(suppliedProfile.image) : null,
     };
   });
 
 const pastors = createProfiles('Pastor', [
   { name: 'Prophet Job Aidoo', role: 'General Overseer', initials: 'JA', image: 'job1.jpg' },
-  { name: 'Apostle Jeffery Yankey', role: 'Apostle', initials: 'JY', image: 'alex.jpg' },
-  { name: 'Pastor Wilfred Nii Armah', role: 'Pastor', initials: 'WA', image: 'bene.jpg' },
-  { name: 'Pastor Nii Odai Mensah', role: 'Pastor', initials: 'NM', image: 'joshua.jpg' },
-  { name: 'Pastor George Turkson', role: 'Pastor', initials: 'GT', image: 'turkson.jpg' },
-  { name: 'Pastor Annorhomah Quarm', role: 'Pastor', initials: 'AQ', image: 'linda.jpg' },
-  { name: 'Elder Maccandles Mark', role: 'Elder', initials: 'MM', image: 'roda.jpg' },
+  { name: 'Apostle Jeffery Yankey', role: 'Apostle', initials: 'JY', image: 'instrumentalist/alex.jpg' },
+  { name: 'Pastor Wilfred Nii Armah', role: 'Pastor', initials: 'WA', image: 'choir/bene.jpg' },
+  { name: 'Pastor Nii Odai Mensah', role: 'Pastor', initials: 'NM', image: 'instrumentalist/joshua.jpg' },
+  { name: 'Pastor George Turkson', role: 'Pastor', initials: 'GT', image: 'pastors/turkson.jpg' },
+  { name: 'Pastor Annorhomah Quarm', role: 'Pastor', initials: 'AQ', image: 'choir/linda.jpg' },
+  { name: 'Elder Maccandles Mark', role: 'Elder', initials: 'MM', image: 'choir/roda.jpg' },
   { name: 'Pastor Maxwell Kwofi Ampiah', role: 'Pastor', initials: 'MA' },
   { name: 'Lady Pastor Serwaa Aidoo', role: 'Lady Pastor', initials: 'SA', image: 'serwaa1.jpg' },
   { name: 'Lady Pastor Patience Nii Armah', role: 'Lady Pastor', initials: 'PA' },
@@ -738,6 +742,15 @@ function Footer() {
         <div className="footer-social">
           <h4>Connect</h4>
           <div className="social-row">
+            <a
+              className="social-facebook"
+              href="https://www.facebook.com/100069340956142/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Visit Living Dove Chapel on Facebook"
+            >
+              <img src={facebookIcon} alt="Facebook" />
+            </a>
             <a href="https://wa.me/233257121701" target="_blank" rel="noreferrer" aria-label="Message Living Dove Chapel on WhatsApp">
               <img src={whatsappIcon} alt="WhatsApp" />
             </a>

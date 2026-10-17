@@ -161,7 +161,7 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("./images/img001.jpg");
+  background-image: url("./images/img01.jpg");
   background-size: cover;
   background-position: center;
   filter: saturate(0.7) contrast(1.08);
@@ -725,6 +725,11 @@ a {
 .social-row a:hover,
 .social-row a:focus-visible {
   transform: translateY(-2px);
+}
+
+.social-row .social-facebook:hover img,
+.social-row .social-facebook:focus-visible img {
+  filter: none;
 }
 
 .social-row img {

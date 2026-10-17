@@ -14,6 +14,14 @@ test('renders the church landing page content', () => {
     'href',
     'https://www.facebook.com/100069340956142/videos/living-dove-chapel/1543925197231340/'
   );
+  expect(screen.getByRole('link', { name: /visit living dove chapel on facebook/i })).toHaveAttribute(
+    'href',
+    'https://www.facebook.com/100069340956142/'
+  );
+  expect(screen.getByRole('link', { name: /message living dove chapel on whatsapp/i })).toHaveAttribute(
+    'href',
+    'https://wa.me/233257121701'
+  );
 });
 
 test('mobile navigation can be opened and closed', () => {
